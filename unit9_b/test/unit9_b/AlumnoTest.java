@@ -20,16 +20,12 @@ public class AlumnoTest {
     /**
      * Test of validaNif method, of class Alumno.
      */
-    @Test(expected=NullPointerException.class)
+    @Test()
     public void testValidaNif() {
         Alumno al=new Alumno();
         boolean expected, actual;
         expected=false;
         actual=al.validaNif("4866");
-        assertEquals(expected, actual);
-        
-        expected=false;
-        actual=al.validaNif(null);
         assertEquals(expected, actual);
         
         expected=false;

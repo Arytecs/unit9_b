@@ -9,23 +9,23 @@ import java.util.regex.Pattern;
  */
 <span class="fc" id="L10">public class Alumno {</span>
     public boolean validaNif(String nif) {
-<span class="pc bpc" id="L12" title="3 of 4 branches missed.">        if (nif.length() != 9 || nif == null) {</span>
+<span class="pc bpc" id="L12" title="1 of 4 branches missed.">        if (nif.length() != 9 || nif == null) {</span>
 <span class="fc" id="L13">            return false;</span>
         }
-<span class="nc" id="L15">        String dni = nif.substring(0, 8);</span>
-<span class="nc" id="L16">        char letra = nif.charAt(8);</span>
-<span class="nc" id="L17">        Pattern pattern = Pattern.compile(&quot;[0-9]{8,8}&quot;);</span>
-<span class="nc" id="L18">        Matcher matcher = pattern.matcher(dni);</span>
-<span class="nc" id="L19">        String letras = &quot;TRWAGMYFPDXBNJZSQVHLCKE&quot;;</span>
-<span class="nc" id="L20">        long ldni = 0;</span>
+<span class="fc" id="L15">        String dni = nif.substring(0, 8);</span>
+<span class="fc" id="L16">        char letra = nif.charAt(8);</span>
+<span class="fc" id="L17">        Pattern pattern = Pattern.compile(&quot;[0-9]{8,8}&quot;);</span>
+<span class="fc" id="L18">        Matcher matcher = pattern.matcher(dni);</span>
+<span class="fc" id="L19">        String letras = &quot;TRWAGMYFPDXBNJZSQVHLCKE&quot;;</span>
+<span class="fc" id="L20">        long ldni = 0;</span>
         try {
-<span class="nc" id="L22">            ldni = Long.parseLong(dni);</span>
-<span class="nc" id="L23">        } catch (NumberFormatException e) {</span>
-<span class="nc" id="L24">            return false;</span>
-<span class="nc" id="L25">        }</span>
-<span class="nc" id="L26">        int indice = (int) (ldni % 23);</span>
-<span class="nc" id="L27">        char letraEsperada = letras.charAt(indice);</span>
-<span class="nc bnc" id="L28" title="All 4 branches missed.">        return matcher.matches() &amp;&amp; letra == letraEsperada;</span>
+<span class="fc" id="L22">            ldni = Long.parseLong(dni);</span>
+<span class="fc" id="L23">        } catch (NumberFormatException e) {</span>
+<span class="fc" id="L24">            return false;</span>
+<span class="fc" id="L25">        }</span>
+<span class="fc" id="L26">        int indice = (int) (ldni % 23);</span>
+<span class="fc" id="L27">        char letraEsperada = letras.charAt(indice);</span>
+<span class="pc bpc" id="L28" title="1 of 4 branches missed.">        return matcher.matches() &amp;&amp; letra == letraEsperada;</span>
     }   
     public float calculaTasaMatricula(int edad, boolean familiaNumerosa,
             boolean repetidor) {
